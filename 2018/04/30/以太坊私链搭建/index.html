@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="为什么搭建私有链 方便获取以太币用于开发和测试 不用同步公有链庞大的数据  配置环境1. 直接下载可执行文件 官方下载地址(需翻墙) 国内镜像  注意：geth是一个命令行工具，需要在命令行中运行geth，不要直接双击geth.exe。(如果不加任何参数直接运行 geth ，会自动连接到以太坊公网，此时会开始同步区块。)   2. 从源码编译安装 go-ethereum源码编译  安装完成后，可以">
+<meta name="description" content="为什么搭建私有链 方便获取以太币用于开发和测试 不用同步公有链庞大的数据  配置环境1. 直接下载可执行文件 官方下载地址(需翻墙) 国内镜像  注意：geth是一个命令行工具，需要在命令行中运行geth，不要直接双击geth.exe。(如果不加任何参数直接运行 geth ，会自动连接到以太坊公网，此时会开始同步区块。)     2. 从源码编译安装 go-ethereum源码编译安装完成后，可以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="以太坊私链搭建(windows)">
 <meta property="og:url" content="http://yoursite.com/2018/04/30/以太坊私链搭建/index.html">
 <meta property="og:site_name" content="BXin&#39;s NOTES">
-<meta property="og:description" content="为什么搭建私有链 方便获取以太币用于开发和测试 不用同步公有链庞大的数据  配置环境1. 直接下载可执行文件 官方下载地址(需翻墙) 国内镜像  注意：geth是一个命令行工具，需要在命令行中运行geth，不要直接双击geth.exe。(如果不加任何参数直接运行 geth ，会自动连接到以太坊公网，此时会开始同步区块。)   2. 从源码编译安装 go-ethereum源码编译  安装完成后，可以">
+<meta property="og:description" content="为什么搭建私有链 方便获取以太币用于开发和测试 不用同步公有链庞大的数据  配置环境1. 直接下载可执行文件 官方下载地址(需翻墙) 国内镜像  注意：geth是一个命令行工具，需要在命令行中运行geth，不要直接双击geth.exe。(如果不加任何参数直接运行 geth ，会自动连接到以太坊公网，此时会开始同步区块。)     2. 从源码编译安装 go-ethereum源码编译安装完成后，可以">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-02T07:52:39.512Z">
+<meta property="og:updated_time" content="2018-05-02T12:50:37.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="以太坊私链搭建(windows)">
-<meta name="twitter:description" content="为什么搭建私有链 方便获取以太币用于开发和测试 不用同步公有链庞大的数据  配置环境1. 直接下载可执行文件 官方下载地址(需翻墙) 国内镜像  注意：geth是一个命令行工具，需要在命令行中运行geth，不要直接双击geth.exe。(如果不加任何参数直接运行 geth ，会自动连接到以太坊公网，此时会开始同步区块。)   2. 从源码编译安装 go-ethereum源码编译  安装完成后，可以">
+<meta name="twitter:description" content="为什么搭建私有链 方便获取以太币用于开发和测试 不用同步公有链庞大的数据  配置环境1. 直接下载可执行文件 官方下载地址(需翻墙) 国内镜像  注意：geth是一个命令行工具，需要在命令行中运行geth，不要直接双击geth.exe。(如果不加任何参数直接运行 geth ，会自动连接到以太坊公网，此时会开始同步区块。)     2. 从源码编译安装 go-ethereum源码编译安装完成后，可以">
 
 
 
@@ -310,9 +310,9 @@
 <li><strong>注意</strong>：geth是一个命令行工具，需要在命令行中运行geth，不要直接双击geth.exe。(如果不加任何参数直接运行 geth ，会自动连接到以太坊公网，此时会开始同步区块。)</li>
 </ul>
 </blockquote>
-<h3 id="2-从源码编译安装-go-ethereum源码编译"><a href="#2-从源码编译安装-go-ethereum源码编译" class="headerlink" title="2. 从源码编译安装 go-ethereum源码编译"></a>2. 从源码编译安装 <a href="https://my.oschina.net/u/2349981/blog/899260" target="_blank" rel="noopener">go-ethereum源码编译</a></h3></li>
+</li>
 </ol>
-<p><strong>安装完成后，可以使用 geth version 命令查看是否安装成功。记得把生成的 geth 加入到系统的环境变量中。</strong></p>
+<h3 id="2-从源码编译安装-go-ethereum源码编译"><a href="#2-从源码编译安装-go-ethereum源码编译" class="headerlink" title="2. 从源码编译安装 go-ethereum源码编译"></a>2. 从源码编译安装 <a href="https://my.oschina.net/u/2349981/blog/899260" target="_blank" rel="noopener">go-ethereum源码编译</a></h3><p><strong>安装完成后，可以使用 geth version 命令查看是否安装成功。记得把生成的 geth 加入到系统的环境变量中。</strong></p>
 <h2 id="私有链搭建"><a href="#私有链搭建" class="headerlink" title="私有链搭建"></a>私有链搭建</h2><h3 id="1-需要自定义第一个区块-一个JSON文件"><a href="#1-需要自定义第一个区块-一个JSON文件" class="headerlink" title="1.需要自定义第一个区块(一个JSON文件)"></a>1.需要自定义第一个区块(一个JSON文件)</h3><p>例如 <code>genesis.json</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;config&quot;: &#123;</span><br><span class="line">        &quot;chainId&quot;: 1234,</span><br><span class="line">        &quot;homesteadBlock&quot;: 0,</span><br><span class="line">        &quot;eip155Block&quot;: 0,</span><br><span class="line">        &quot;eip158Block&quot;: 0</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;coinbase&quot; : &quot;0x0000000000000000000000000000000000000000&quot;,</span><br><span class="line">    &quot;difficulty&quot; : &quot;0x40000&quot;,</span><br><span class="line">    &quot;extraData&quot; : &quot;&quot;,</span><br><span class="line">    &quot;gasLimit&quot; : &quot;0xffffffff&quot;,</span><br><span class="line">    &quot;nonce&quot; : &quot;0x0000000000000042&quot;,</span><br><span class="line">    &quot;mixhash&quot; : &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,</span><br><span class="line">    &quot;parentHash&quot; : &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,</span><br><span class="line">    &quot;timestamp&quot; : &quot;0x00&quot;,</span><br><span class="line">    &quot;alloc&quot;: &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>各个参数的作用：<br><code>config</code>：区块链的相关参数</p>
 <blockquote>
@@ -405,9 +405,7 @@
 </blockquote>
 <p>发送交易:</p>
 <blockquote>
-<ul>
-<li>eth.sendTransaction({from:””,to:””,value:web3.toWei(1,”ether”)})  需要先使用 <strong>personal.unlockAccount()</strong> 解锁账户 , 并使用 <strong>miner.start()</strong> 开启挖矿才能把交易发送出去</li>
-</ul>
+<p>eth.sendTransaction({from:””,to:””,value:web3.toWei(1,”ether”)})。需要先使用 <strong>personal.unlockAccount()</strong> 解锁账户 , 并使用 <strong>miner.start()</strong> 开启挖矿才能把交易发送出去</p>
 </blockquote>
 
       
