@@ -79,25 +79,17 @@
 
 
 
-<meta name="description" content="Mist介绍 : Mist 是以太坊官方提供的浏览器，通过Mist我们可以很方便的连接上我们的私有网络，从而更好的开发、调试、测试我们的智能合约。Mist下载   Mist使用安装完成后 , 先启动我们的私有链网络 , 然后打开Mist 点击LAUNCH APPLICATION 进入Mist  由于这是我们刚刚搭建的私有链 , 可以看到这上面没有任何账户数据  使用personal.newAcco">
+<meta name="description" content="如果我们的合约需要和区块链上的其他的合约会话，则需先定义一个 interface (接口)。先举一个简单的栗子。 假设在区块链上有这么一个合约： 1234567891011contract LuckyNumber &amp;#123;  mapping(address =&amp;gt; uint) numbers;  function setNum(uint _num) public &amp;#123;    num">
 <meta property="og:type" content="article">
-<meta property="og:title" content="以太坊私链搭配Mist使用">
-<meta property="og:url" content="http://www.bjz2017.com/2018/05/02/以太坊私链搭配Mist使用/index.html">
+<meta property="og:title" content="合约间的交互">
+<meta property="og:url" content="http://www.bjz2017.com/2018/05/09/合约间的交互/index.html">
 <meta property="og:site_name" content="BXin&#39;s NOTES">
-<meta property="og:description" content="Mist介绍 : Mist 是以太坊官方提供的浏览器，通过Mist我们可以很方便的连接上我们的私有网络，从而更好的开发、调试、测试我们的智能合约。Mist下载   Mist使用安装完成后 , 先启动我们的私有链网络 , 然后打开Mist 点击LAUNCH APPLICATION 进入Mist  由于这是我们刚刚搭建的私有链 , 可以看到这上面没有任何账户数据  使用personal.newAcco">
+<meta property="og:description" content="如果我们的合约需要和区块链上的其他的合约会话，则需先定义一个 interface (接口)。先举一个简单的栗子。 假设在区块链上有这么一个合约： 1234567891011contract LuckyNumber &amp;#123;  mapping(address =&amp;gt; uint) numbers;  function setNum(uint _num) public &amp;#123;    num">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/0078A64wgy1fqx2wzb9xuj30k80k4abn.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/0078A64wgy1fqx3hqx9j8j30b406ewha.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/0078A64wgy1fqx3pwhfedj31do0m540z.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/0078A64wgy1fqx4r2izm9j31bx0is76j.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/0078A64wgy1fqx5k4j5q3j30fi03iwec.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/0078A64wgy1fqx8h1c5bzj313s0suq50.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/0078A64wgy1fqx9v2sia4j31du0s9diy.jpg">
-<meta property="og:updated_time" content="2018-05-02T12:48:18.521Z">
+<meta property="og:updated_time" content="2018-05-09T11:05:28.765Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="以太坊私链搭配Mist使用">
-<meta name="twitter:description" content="Mist介绍 : Mist 是以太坊官方提供的浏览器，通过Mist我们可以很方便的连接上我们的私有网络，从而更好的开发、调试、测试我们的智能合约。Mist下载   Mist使用安装完成后 , 先启动我们的私有链网络 , 然后打开Mist 点击LAUNCH APPLICATION 进入Mist  由于这是我们刚刚搭建的私有链 , 可以看到这上面没有任何账户数据  使用personal.newAcco">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0078A64wgy1fqx2wzb9xuj30k80k4abn.jpg">
+<meta name="twitter:title" content="合约间的交互">
+<meta name="twitter:description" content="如果我们的合约需要和区块链上的其他的合约会话，则需先定义一个 interface (接口)。先举一个简单的栗子。 假设在区块链上有这么一个合约： 1234567891011contract LuckyNumber &amp;#123;  mapping(address =&amp;gt; uint) numbers;  function setNum(uint _num) public &amp;#123;    num">
 
 
 
@@ -127,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://www.bjz2017.com/2018/05/02/以太坊私链搭配Mist使用/"/>
+  <link rel="canonical" href="http://www.bjz2017.com/2018/05/09/合约间的交互/"/>
 
 
 
 
 
-  <title>以太坊私链搭配Mist使用 | BXin's NOTES</title>
+  <title>合约间的交互 | BXin's NOTES</title>
   
 
 
@@ -240,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.bjz2017.com/2018/05/02/以太坊私链搭配Mist使用/">
+    <link itemprop="mainEntityOfPage" href="http://www.bjz2017.com/2018/05/09/合约间的交互/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BXin">
@@ -257,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">以太坊私链搭配Mist使用</h1>
+          <h1 class="post-title" itemprop="name headline">合约间的交互</h1>
         
 
         <div class="post-meta">
@@ -269,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-02T15:49:51+08:00">
-                2018-05-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-09T18:31:43+08:00">
+                2018-05-09
               </time>
             
 
@@ -307,27 +299,20 @@
       
 
       
-        <h2 id="Mist介绍"><a href="#Mist介绍" class="headerlink" title="Mist介绍 :"></a>Mist介绍 :</h2><blockquote>
-<p>Mist 是以太坊官方提供的浏览器，通过Mist我们可以很方便的连接上我们的私有网络，从而更好的开发、调试、测试我们的智能合约。<a href="https://github.com/ethereum/mist/releases" target="_blank" rel="noopener">Mist下载</a></p>
+        <p>如果我们的合约需要和区块链上的其他的合约会话，则需先定义一个 interface (接口)。<br>先举一个简单的栗子。 假设在区块链上有这么一个合约：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">contract LuckyNumber &#123;</span><br><span class="line">  mapping(address =&gt; uint) numbers;</span><br><span class="line"></span><br><span class="line">  function setNum(uint _num) public &#123;</span><br><span class="line">    numbers[msg.sender] = _num;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function getNum(address _myAddress) public view returns (uint) &#123;</span><br><span class="line">    return numbers[_myAddress];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是个很简单的合约，您可以用它存储自己的幸运号码，并将其与您的以太坊地址关联。 这样其他人就可以通过您的地址查找您的幸运号码了。</p>
+<p>现在假设我们有一个外部合约，使用 getNum 函数可读取其中的数据。</p>
+<p>首先，我们定义 LuckyNumber 合约的 interface ：：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">contract NumberInterface &#123;</span><br><span class="line">  function getNum(address _myAddress) public view returns (uint);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>请注意，这个过程虽然看起来像在定义一个合约，但其实内里不同：<br>首先，我们只声明了要与之交互的函数 —— 在本例中为 getNum —— 在其中我们没有使用到任何其他的函数或状态变量。<br>其次，我们并没有使用大括号（{ 和 &gt;<br>}）定义函数体，我们单单用分号（;）结束了函数声明。这使它看起来像一个合约框架。<br>编译器就是靠这些特征认出它是一个接口的。<br>在我们的 app 代码中使用这个接口，合约就知道其他合约的函数是怎样的，应该如何调用，以及可期待什么类型的返回<br>值 。</p>
 </blockquote>
-<p><img src="https://ws1.sinaimg.cn/large/0078A64wgy1fqx2wzb9xuj30k80k4abn.jpg" width="300"></p>
-<h2 id="Mist使用"><a href="#Mist使用" class="headerlink" title="Mist使用"></a>Mist使用</h2><p>安装完成后 , 先启动我们的私有链网络 , 然后打开Mist</p>
-<center><br>点击<strong>LAUNCH APPLICATION</strong> 进入Mist<br><br><img src="https://ws1.sinaimg.cn/large/0078A64wgy1fqx3hqx9j8j30b406ewha.jpg" width="200"><br></center>
-
-<center><br>由于这是我们刚刚搭建的私有链 , 可以看到这上面没有任何账户数据<br><br><img src="https://ws1.sinaimg.cn/large/0078A64wgy1fqx3pwhfedj31do0m540z.jpg" width="400"><br></center>
-
-<center><br>使用<code>personal.newAccount(&quot;test1&quot;)</code>新建一个账户 , test1 为这个账户的密码 ( <em>或者点击Mist上的新增账户</em> )<br><br><img src="https://ws1.sinaimg.cn/large/0078A64wgy1fqx4r2izm9j31bx0is76j.jpg" width="400"><br></center>
-
-<center><br>使用<code>eth.getBalance(eth.accounts[0])</code> 获取当前账户的余额(单位为Wei)<br><br><img src="https://ws1.sinaimg.cn/large/0078A64wgy1fqx5k4j5q3j30fi03iwec.jpg" width="200"><br></center>
-
-<center><br>由于是新建的账号 , 所以账户余额为0 , 下面使用miner.start()开启挖矿 , 为accounts[0]账户获取一些以太坊<br><br><img src="https://ws1.sinaimg.cn/large/0078A64wgy1fqx8h1c5bzj313s0suq50.jpg" width="400"><br><br></center>
-
-<p>看到由于挖矿奖励 , account[0]账户里已经有了以太坊。接下来我们新建一个账户 , 并从account[0]中发送100个以太坊到新账户中 , 可以使用Mist和命令行2种方式。</p>
-<center><br><img src="https://ws1.sinaimg.cn/large/0078A64wgy1fqx9v2sia4j31du0s9diy.jpg" width="400"><br></center>
-
-<p>由于我们还没有开始挖矿 , 所以交易还没有成功 。</p>
-<p>使用<code>miner.start()</code>开启挖矿 。看到account[1]已经有了100个以太坊 , 交易成功</p>
-<p>本篇只介绍了Mist的安装和一些基本使用来配合我们测试开发。</p>
+<p>继续前面 NumberInterface 的例子，我们既然将接口定义为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">contract NumberInterface &#123;</span><br><span class="line">  function getNum(address _myAddress) public view returns (uint);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们可以在合约中这样使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">contract MyContract &#123;</span><br><span class="line">  address NumberInterfaceAddress = 0xab38...;</span><br><span class="line">  // ^ 这是FavoriteNumber合约在以太坊上的地址</span><br><span class="line">  NumberInterface numberContract = NumberInterface(NumberInterfaceAddress);</span><br><span class="line">  // 现在变量 `numberContract` 指向另一个合约对象</span><br><span class="line"></span><br><span class="line">  function someFunction() public &#123;</span><br><span class="line">    // 现在我们可以调用在那个合约中声明的 `getNum`函数:</span><br><span class="line">    uint num = numberContract.getNum(msg.sender);</span><br><span class="line">    // ...在这儿使用 `num`变量做些什么</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过这种方式，只要将您合约的可见性设置为public(公共)或external(外部)，它们就可以与以太坊区块链上的任何其他合约进行交互。</p>
 
       
     </div>
@@ -352,8 +337,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/30/以太坊私链搭建/" rel="next" title="以太坊私链搭建(windows)">
-                <i class="fa fa-chevron-left"></i> 以太坊私链搭建(windows)
+              <a href="/2018/05/02/以太坊私链搭配Mist使用/" rel="next" title="以太坊私链搭配Mist使用">
+                <i class="fa fa-chevron-left"></i> 以太坊私链搭配Mist使用
               </a>
             
           </div>
@@ -361,10 +346,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/09/合约间的交互/" rel="prev" title="合约间的交互">
-                合约间的交互 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -416,17 +397,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -468,22 +440,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mist介绍"><span class="nav-number">1.</span> <span class="nav-text">Mist介绍 :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mist使用"><span class="nav-number">2.</span> <span class="nav-text">Mist使用</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
