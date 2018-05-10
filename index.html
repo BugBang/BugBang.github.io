@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,13 +79,16 @@
 
 
 
+<meta name="description" content="Nothing is impossible to a willing heart.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="BXin&#39;s NOTES">
 <meta property="og:url" content="http://www.bjz2017.com/index.html">
 <meta property="og:site_name" content="BXin&#39;s NOTES">
-<meta property="og:locale" content="default">
+<meta property="og:description" content="Nothing is impossible to a willing heart.">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BXin&#39;s NOTES">
+<meta name="twitter:description" content="Nothing is impossible to a willing heart.">
 
 
 
@@ -93,7 +96,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -101,7 +104,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -133,7 +136,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -182,7 +185,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
           </a>
         </li>
       
@@ -192,7 +195,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            归档
           </a>
         </li>
       
@@ -232,7 +235,7 @@
     <link itemprop="mainEntityOfPage" href="http://www.bjz2017.com/2018/05/09/合约间的交互/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BXin">
+      <meta itemprop="name" content="饺子打不过包子">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -258,9 +261,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-09T18:31:43+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T18:31:43+08:00">
                 2018-05-09
               </time>
             
@@ -273,6 +276,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/09/合约间的交互/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/09/合约间的交互/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -299,23 +313,15 @@
 
       
         
-          
-            <p>如果我们的合约需要和区块链上的其他的合约会话，则需先定义一个 interface (接口)。<br>先举一个简单的栗子。 假设在区块链上有这么一个合约：</p>
+          <p>如果我们的合约需要和区块链上的其他的合约会话，则需先定义一个 interface (接口)。<br>先举一个简单的栗子。 假设在区块链上有这么一个合约：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">contract LuckyNumber &#123;</span><br><span class="line">  mapping(address =&gt; uint) numbers;</span><br><span class="line"></span><br><span class="line">  function setNum(uint _num) public &#123;</span><br><span class="line">    numbers[msg.sender] = _num;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function getNum(address _myAddress) public view returns (uint) &#123;</span><br><span class="line">    return numbers[_myAddress];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这是个很简单的合约，您可以用它存储自己的幸运号码，并将其与您的以太坊地址关联。 这样其他人就可以通过您的地址查找您的幸运号码了。</p>
-<p>现在假设我们有一个外部合约，使用 getNum 函数可读取其中的数据。</p>
-<p>首先，我们定义 LuckyNumber 合约的 interface ：：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">contract NumberInterface &#123;</span><br><span class="line">  function getNum(address _myAddress) public view returns (uint);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>请注意，这个过程虽然看起来像在定义一个合约，但其实内里不同：<br>首先，我们只声明了要与之交互的函数 —— 在本例中为 getNum —— 在其中我们没有使用到任何其他的函数或状态变量。<br>其次，我们并没有使用大括号（{ 和 &gt;<br>}）定义函数体，我们单单用分号（;）结束了函数声明。这使它看起来像一个合约框架。<br>编译器就是靠这些特征认出它是一个接口的。<br>在我们的 app 代码中使用这个接口，合约就知道其他合约的函数是怎样的，应该如何调用，以及可期待什么类型的返回<br>值 。</p>
-</blockquote>
-<p>继续前面 NumberInterface 的例子，我们既然将接口定义为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">contract NumberInterface &#123;</span><br><span class="line">  function getNum(address _myAddress) public view returns (uint);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们可以在合约中这样使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">contract MyContract &#123;</span><br><span class="line">  address NumberInterfaceAddress = 0xab38...;</span><br><span class="line">  // ^ 这是FavoriteNumber合约在以太坊上的地址</span><br><span class="line">  NumberInterface numberContract = NumberInterface(NumberInterfaceAddress);</span><br><span class="line">  // 现在变量 `numberContract` 指向另一个合约对象</span><br><span class="line"></span><br><span class="line">  function someFunction() public &#123;</span><br><span class="line">    // 现在我们可以调用在那个合约中声明的 `getNum`函数:</span><br><span class="line">    uint num = numberContract.getNum(msg.sender);</span><br><span class="line">    // ...在这儿使用 `num`变量做些什么</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过这种方式，只要将您合约的可见性设置为public(公共)或external(外部)，它们就可以与以太坊区块链上的任何其他合约进行交互。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/09/合约间的交互/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -365,7 +371,7 @@
     <link itemprop="mainEntityOfPage" href="http://www.bjz2017.com/2018/05/02/以太坊私链搭配Mist使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BXin">
+      <meta itemprop="name" content="饺子打不过包子">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -391,9 +397,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-02T15:49:51+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T15:49:51+08:00">
                 2018-05-02
               </time>
             
@@ -406,6 +412,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/02/以太坊私链搭配Mist使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/02/以太坊私链搭配Mist使用/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -432,30 +449,17 @@
 
       
         
-          
-            <h2 id="Mist介绍"><a href="#Mist介绍" class="headerlink" title="Mist介绍 :"></a>Mist介绍 :</h2><blockquote>
+          <h2 id="Mist介绍"><a href="#Mist介绍" class="headerlink" title="Mist介绍 :"></a>Mist介绍 :</h2><blockquote>
 <p>Mist 是以太坊官方提供的浏览器，通过Mist我们可以很方便的连接上我们的私有网络，从而更好的开发、调试、测试我们的智能合约。<a href="https://github.com/ethereum/mist/releases" target="_blank" rel="noopener">Mist下载</a></p>
 </blockquote>
 <p><img src="https://ws1.sinaimg.cn/large/0078A64wgy1fqx2wzb9xuj30k80k4abn.jpg" width="300"></p>
-<h2 id="Mist使用"><a href="#Mist使用" class="headerlink" title="Mist使用"></a>Mist使用</h2><p>安装完成后 , 先启动我们的私有链网络 , 然后打开Mist</p>
-<center><br>点击<strong>LAUNCH APPLICATION</strong> 进入Mist<br><br><img src="https://ws1.sinaimg.cn/large/0078A64wgy1fqx3hqx9j8j30b406ewha.jpg" width="200"><br></center>
-
-<center><br>由于这是我们刚刚搭建的私有链 , 可以看到这上面没有任何账户数据<br><br><img src="https://ws1.sinaimg.cn/large/0078A64wgy1fqx3pwhfedj31do0m540z.jpg" width="400"><br></center>
-
-<center><br>使用<code>personal.newAccount(&quot;test1&quot;)</code>新建一个账户 , test1 为这个账户的密码 ( <em>或者点击Mist上的新增账户</em> )<br><br><img src="https://ws1.sinaimg.cn/large/0078A64wgy1fqx4r2izm9j31bx0is76j.jpg" width="400"><br></center>
-
-<center><br>使用<code>eth.getBalance(eth.accounts[0])</code> 获取当前账户的余额(单位为Wei)<br><br><img src="https://ws1.sinaimg.cn/large/0078A64wgy1fqx5k4j5q3j30fi03iwec.jpg" width="200"><br></center>
-
-<center><br>由于是新建的账号 , 所以账户余额为0 , 下面使用miner.start()开启挖矿 , 为accounts[0]账户获取一些以太坊<br><br><img src="https://ws1.sinaimg.cn/large/0078A64wgy1fqx8h1c5bzj313s0suq50.jpg" width="400"><br><br></center>
-
-<p>看到由于挖矿奖励 , account[0]账户里已经有了以太坊。接下来我们新建一个账户 , 并从account[0]中发送100个以太坊到新账户中 , 可以使用Mist和命令行2种方式。</p>
-<center><br><img src="https://ws1.sinaimg.cn/large/0078A64wgy1fqx9v2sia4j31du0s9diy.jpg" width="400"><br></center>
-
-<p>由于我们还没有开始挖矿 , 所以交易还没有成功 。</p>
-<p>使用<code>miner.start()</code>开启挖矿 。看到account[1]已经有了100个以太坊 , 交易成功</p>
-<p>本篇只介绍了Mist的安装和一些基本使用来配合我们测试开发。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/02/以太坊私链搭配Mist使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -505,7 +509,7 @@
     <link itemprop="mainEntityOfPage" href="http://www.bjz2017.com/2018/04/30/以太坊私链搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BXin">
+      <meta itemprop="name" content="饺子打不过包子">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -531,9 +535,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-30T20:32:06+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-30T20:32:06+08:00">
                 2018-04-30
               </time>
             
@@ -546,6 +550,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/30/以太坊私链搭建/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/30/以太坊私链搭建/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -572,8 +587,7 @@
 
       
         
-          
-            <h2 id="为什么搭建私有链"><a href="#为什么搭建私有链" class="headerlink" title="为什么搭建私有链"></a>为什么搭建私有链</h2><ol>
+          <h2 id="为什么搭建私有链"><a href="#为什么搭建私有链" class="headerlink" title="为什么搭建私有链"></a>为什么搭建私有链</h2><ol>
 <li>方便获取以太币用于开发和测试</li>
 <li>不用同步公有链庞大的数据</li>
 </ol>
@@ -587,102 +601,13 @@
 </li>
 </ol>
 <h3 id="2-从源码编译安装-go-ethereum源码编译"><a href="#2-从源码编译安装-go-ethereum源码编译" class="headerlink" title="2. 从源码编译安装 go-ethereum源码编译"></a>2. 从源码编译安装 <a href="https://my.oschina.net/u/2349981/blog/899260" target="_blank" rel="noopener">go-ethereum源码编译</a></h3><p><strong>安装完成后，可以使用 geth version 命令查看是否安装成功。记得把生成的 geth 加入到系统的环境变量中。</strong></p>
-<h2 id="私有链搭建"><a href="#私有链搭建" class="headerlink" title="私有链搭建"></a>私有链搭建</h2><h3 id="1-需要自定义第一个区块-一个JSON文件"><a href="#1-需要自定义第一个区块-一个JSON文件" class="headerlink" title="1.需要自定义第一个区块(一个JSON文件)"></a>1.需要自定义第一个区块(一个JSON文件)</h3><p>例如 <code>genesis.json</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;config&quot;: &#123;</span><br><span class="line">        &quot;chainId&quot;: 1234,</span><br><span class="line">        &quot;homesteadBlock&quot;: 0,</span><br><span class="line">        &quot;eip155Block&quot;: 0,</span><br><span class="line">        &quot;eip158Block&quot;: 0</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;coinbase&quot; : &quot;0x0000000000000000000000000000000000000000&quot;,</span><br><span class="line">    &quot;difficulty&quot; : &quot;0x40000&quot;,</span><br><span class="line">    &quot;extraData&quot; : &quot;&quot;,</span><br><span class="line">    &quot;gasLimit&quot; : &quot;0xffffffff&quot;,</span><br><span class="line">    &quot;nonce&quot; : &quot;0x0000000000000042&quot;,</span><br><span class="line">    &quot;mixhash&quot; : &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,</span><br><span class="line">    &quot;parentHash&quot; : &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,</span><br><span class="line">    &quot;timestamp&quot; : &quot;0x00&quot;,</span><br><span class="line">    &quot;alloc&quot;: &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>各个参数的作用：<br><code>config</code>：区块链的相关参数</p>
-<blockquote>
-<ul>
-<li><code>chainId</code>：区块链的ID，在 geth 命令中的 –networkid 参数需要与 chainId 的值一致(以太坊公网的网络 ID 是 1)</li>
-<li><code>homesteadBlock</code> : Homestead 硬分叉区块高度，不需要关注</li>
-<li><code>eip155Block</code> : EIP 155 硬分叉高度，不需要关注</li>
-<li><code>eip158Block</code> : EIP 158 硬分叉高度，不需要关注</li>
-</ul>
-</blockquote>
-<ul>
-<li><code>mixhash</code> : 与nonce配合用于挖矿，由上一个区块的一部分生成的hash</li>
-<li><code>nonce</code> : nonce就是一个64位随机数，用于挖矿</li>
-<li><code>difficulty</code> : 设置当前区块的难度，如果难度过大，cpu挖矿就很难，这里设置较小难度</li>
-<li><code>alloc</code> : 用来预置账号以及账号的以太币数量，因为私有链挖矿比较容易，所以我们不需要预置有币的账号，需要的时候自己创建即可以</li>
-<li><code>coinbase</code> : 矿工的账号，随便填</li>
-<li><code>timestamp</code> : 设置创世块的时间戳</li>
-<li><code>parentHash</code> : 上一个区块的hash值，因为是创世块，所以这个值是0</li>
-<li><code>extraData</code> : 附加*  信息，随便填，可以填你的个性信息</li>
-<li><code>gasLimit</code> : 值设置对GAS的消耗总量限制，用来限制区块能包含的交易信息总和</li>
-</ul>
-<h3 id="2-初始化创世区块"><a href="#2-初始化创世区块" class="headerlink" title="2.初始化创世区块"></a>2.初始化创世区块</h3><ul>
-<li style="list-style: none"><input type="checkbox" checked> 新建一个目录 <code>private-net</code> -&gt; <code>data</code>用来存放区块链数据 , 将<code>genesis.json</code>放入<code>private-net</code>目录下</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">private-net</span><br><span class="line">├── data</span><br><span class="line">└── genesis.json</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>[x] 进入<code>private-net</code>目录下 , 使用geth的init命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">geth --datadir data init genesis.json</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<ul>
-<li>init genesis.json 表示读取 genesis.json 文件，根据其中的内容，将创世区块写入到区块链中。</li>
-<li>–datadir data 表示指定数据存放目录为 data</li>
-</ul>
-</blockquote>
-<p>如果看到以下的输出内容，说明初始化成功了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">INFO [04-30|19:22:17] Maximum peer count                       ETH=25 LES=0 total=25</span><br><span class="line">INFO [04-30|19:22:17] Allocated cache and file handles         database=G:\\private-net\\data\\geth\\chaindata cache=16 handles=16</span><br><span class="line">INFO [04-30|19:22:18] Writing custom genesis block</span><br><span class="line">INFO [04-30|19:22:18] Persisted trie from memory database      nodes=0 size=0.00B time=0s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B</span><br><span class="line">INFO [04-30|19:22:18] Successfully wrote genesis state         database=chaindata                              hash=a0e580…a5e82e</span><br><span class="line">INFO [04-30|19:22:18] Allocated cache and file handles         database=G:\\private-net\\data\\geth\\lightchaindata cache=16 handles=16</span><br><span class="line">INFO [04-30|19:22:18] Writing custom genesis block</span><br><span class="line">INFO [04-30|19:22:18] Persisted trie from memory database      nodes=0 size=0.00B time=0s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B</span><br><span class="line">INFO [04-30|19:22:18] Successfully wrote genesis state         database=lightchaindata                              hash=a0e580…a5e82e</span><br></pre></td></tr></table></figure>
-<p>成功后的目录结构</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">private-net</span><br><span class="line">├── data</span><br><span class="line">│   ├── geth</span><br><span class="line">│   │   ├── chaindata</span><br><span class="line">│   │   │   ├── 000001.log</span><br><span class="line">│   │   │   ├── CURRENT</span><br><span class="line">│   │   │   ├── LOCK</span><br><span class="line">│   │   │   ├── LOG</span><br><span class="line">│   │   │   └── MANIFEST-000000</span><br><span class="line">│   │   └── lightchaindata</span><br><span class="line">│   │       ├── 000001.log</span><br><span class="line">│   │       ├── CURRENT</span><br><span class="line">│   │       ├── LOCK</span><br><span class="line">│   │       ├── LOG</span><br><span class="line">│   │       └── MANIFEST-000000</span><br><span class="line">│   └── keystore</span><br><span class="line">└── genesis.json</span><br></pre></td></tr></table></figure>
-<p>其中 <code>geth/chaindata</code> 存放区块数据  , <code>keystore</code>存放用户数据 , 至此私有链已经搭建完成</p>
-<h2 id="启动私有链"><a href="#启动私有链" class="headerlink" title="启动私有链"></a>启动私有链</h2><p>使用 <code>geth console</code>，表示启动节点并进入交互式控制台</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">geth --identity &quot;myprivatenode&quot; --rpc --rpccorsdomain &quot;*&quot; --rpcport &quot;19901&quot; --rpcapi &quot;db,eth,net,web3,personal&quot; --networkid 1234 --gcmode=archive --datadir &quot;G:\private-net\data&quot; --nodiscover console</span><br></pre></td></tr></table></figure>
-<p>各个参数的作用：</p>
-<blockquote>
-<ul>
-<li><code>identity</code> : 区块链的标示，随便填写，用于标示目前网络的名字</li>
-<li><code>rpc</code> : 启动rpc通信，可以进行智能合约的部署和调试</li>
-<li><code>rpccorsdomain</code> : 允许连接到rpc的url匹配模式 *代表任意</li>
-<li><code>rpcport</code> : 指定rpc通信监听端口号（默认为 8545）</li>
-<li><code>rpcapi</code> : 表示允许rpc使用哪些API</li>
-<li><code>networkid</code> : 设置当前区块链的网络ID，用于区分不同的网络 , 最好和chainId一致，否则无法使用MetaMask</li>
-<li><code>gcmode=archive</code> : 不加此选项 , 关闭节点后，区块不会保存</li>
-<li><code>datadir</code> : 指定区块链数据的存储位置</li>
-<li><code>nodiscover</code> : 关闭节点发现机制，防止加入有同样初始配置的陌生节点</li>
-</ul>
-</blockquote>
-<p>运行完上述命令就进入了交互式的 JavaScript 节点控制台</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">INFO [04-30|19:38:30] Starting P2P networking</span><br><span class="line">INFO [04-30|19:38:33] UDP listener up                          self=enode://7431aa2f875332ed49fe53c7e2b693309e95b7284ad3caf15791e48dfdeca93dda998a859ef9d368a7489b6c06f9edb5054536fe98d1c1afa1bd2a51d0d40be2@[::]:30303</span><br><span class="line">INFO [04-30|19:38:33] RLPx listener up                         self=enode://7431aa2f875332ed49fe53c7e2b693309e95b7284ad3caf15791e48dfdeca93dda998a859ef9d368a7489b6c06f9edb5054536fe98d1c1afa1bd2a51d0d40be2@[::]:30303</span><br><span class="line">INFO [04-30|19:38:33] IPC endpoint opened                      url=\\\\.\\pipe\\geth.ipc</span><br><span class="line">INFO [04-30|19:38:33] HTTP endpoint opened                     url=http://127.0.0.1:19901 cors=* vhosts=localhost</span><br><span class="line">Welcome to the Geth JavaScript console!</span><br><span class="line">instance: Geth/myprivatenode/v1.8.2-stable-b8b9f7f4/windows-amd64/go1.9.2</span><br><span class="line">modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-<p>此时以太坊私有网络搭建成功<br>可以新打开一个命令行 , 输入 <code>geth attach ipc:\\.\pipe\geth.ipc</code> 连接到私有网络来操作 , 方便观察日志</p>
-<h2 id="控制台操作"><a href="#控制台操作" class="headerlink" title="控制台操作"></a>控制台操作</h2><p>使用内置的<strong>JavaScript</strong>对象来操作以太坊 , 常用对象:</p>
-<blockquote>
-<ul>
-<li><code>eth</code>：包含一些跟操作区块链相关的方法；</li>
-<li><code>net</code>：包含一些查看p2p网络状态的方法；</li>
-<li><code>admin</code>：包含一些与管理节点相关的方法；</li>
-<li><code>miner</code>：包含启动&amp;停止挖矿的一些方法；</li>
-<li><code>personal</code>：主要包含一些管理账户的方法；</li>
-<li><code>txpool</code>：包含一些查看交易内存池的方法；</li>
-<li><code>web3</code>：包含了以上对象，还包含一些单位换算的方法。</li>
-</ul>
-</blockquote>
-<p>常用指令:</p>
-<blockquote>
-<ul>
-<li><code>eth.accounts</code>  : 查询账户</li>
-<li><code>eth.getBalance(eth.accounts[])</code>：查看账户余额，返回值的单位是 Wei（Wei是以太坊中最小货币面额单位，类似比特币中的聪，1 ether = 10^18 Wei）；</li>
-<li><code>eth.blockNumber</code>：列出区块总数；</li>
-<li><code>eth.coinbase</code> : 查看挖矿账户</li>
-<li><code>net.listening</code> ：检查是否连接</li>
-<li><code>net.peerCount</code> : 查看节点链接的数量</li>
-<li><code>admin.peers</code> ：返回连接到的节点的详细信息</li>
-<li><code>admin.nodeInfo</code> ：返回本地节点的详细信息</li>
-<li><code>miner.start()</code> : 开始挖矿</li>
-<li><code>miner.stop()</code> : 结束挖矿</li>
-<li><code>miner.setEtherbase(eth.accounts[])</code> : 设置挖矿账户</li>
-<li><code>personal.newAccount(&quot;password&quot;)</code> : 创建账户</li>
-<li><code>personal.unlockAccount(eth.accounts[])</code> :  解锁账户</li>
-<li><code>txpool.status</code> ：交易池中的状态；</li>
-</ul>
-</blockquote>
-<p>发送交易:</p>
-<blockquote>
-<p>eth.sendTransaction({from:””,to:””,value:web3.toWei(1,”ether”)})。需要先使用 <strong>personal.unlockAccount()</strong> 解锁账户 , 并使用 <strong>miner.start()</strong> 开启挖矿才能把交易发送出去</p>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/30/以太坊私链搭建/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -751,8 +676,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">BXin</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-author-name" itemprop="name">饺子打不过包子</p>
+              <p class="site-description motion-element" itemprop="description">Nothing is impossible to a willing heart.</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -763,7 +688,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -807,26 +732,40 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">BXin</span>
+  <span class="author" itemprop="copyrightHolder">饺子打不过包子</span>
 
   
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -870,6 +809,9 @@
 
 
 
+  
+  
+
 
 
 
@@ -908,6 +850,16 @@
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
 
   
 
@@ -935,6 +887,14 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://bjz.disqus.com/count.js" async></script>
+    
+
+    
+
+  
+
 
 
 
@@ -947,10 +907,6 @@
   
 
 
-
-
-
-  
 
 
 
