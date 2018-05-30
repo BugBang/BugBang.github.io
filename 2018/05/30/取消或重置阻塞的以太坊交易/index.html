@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="gas的确定当我们在以太坊发送一笔交易的时候, 首先要确定这笔交易的手续费, 避免太高浪费或者太低被矿工抛弃以至于交易阻塞。可以通过https://ethgasstation.info 或者 https://www.etherscan.io/txsPending来查询确定。">
+<meta name="description" content="gas的确定当我们在以太坊发送一笔交易的时候, 首先要确定这笔交易的手续费, 避免太高浪费或者太低被矿工抛弃以至于交易阻塞。可以通过https://ethgasstation.info 或者 https://www.etherscan.io/txsPending 来查询确定。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="取消或重置阻塞的以太坊交易的方法">
 <meta property="og:url" content="http://www.bjz2017.com/2018/05/30/取消或重置阻塞的以太坊交易/index.html">
 <meta property="og:site_name" content="BXin&#39;s NOTES">
-<meta property="og:description" content="gas的确定当我们在以太坊发送一笔交易的时候, 首先要确定这笔交易的手续费, 避免太高浪费或者太低被矿工抛弃以至于交易阻塞。可以通过https://ethgasstation.info 或者 https://www.etherscan.io/txsPending来查询确定。">
+<meta property="og:description" content="gas的确定当我们在以太坊发送一笔交易的时候, 首先要确定这笔交易的手续费, 避免太高浪费或者太低被矿工抛弃以至于交易阻塞。可以通过https://ethgasstation.info 或者 https://www.etherscan.io/txsPending 来查询确定。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-30T10:12:39.459Z">
+<meta property="og:updated_time" content="2018-05-30T10:26:42.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="取消或重置阻塞的以太坊交易的方法">
-<meta name="twitter:description" content="gas的确定当我们在以太坊发送一笔交易的时候, 首先要确定这笔交易的手续费, 避免太高浪费或者太低被矿工抛弃以至于交易阻塞。可以通过https://ethgasstation.info 或者 https://www.etherscan.io/txsPending来查询确定。">
+<meta name="twitter:description" content="gas的确定当我们在以太坊发送一笔交易的时候, 首先要确定这笔交易的手续费, 避免太高浪费或者太低被矿工抛弃以至于交易阻塞。可以通过https://ethgasstation.info 或者 https://www.etherscan.io/txsPending 来查询确定。">
 
 
 
@@ -315,13 +315,13 @@
       
 
       
-        <h2 id="gas的确定"><a href="#gas的确定" class="headerlink" title="gas的确定"></a>gas的确定</h2><p>当我们在以太坊发送一笔交易的时候, 首先要确定这笔交易的手续费, 避免太高浪费或者太低被矿工抛弃以至于交易阻塞。可以通过<a href="https://ethgasstation.info" target="_blank" rel="noopener">https://ethgasstation.info</a> 或者 <a href="https://www.etherscan.io/txsPending来查询确定。" target="_blank" rel="noopener">https://www.etherscan.io/txsPending来查询确定。</a></p>
+        <h2 id="gas的确定"><a href="#gas的确定" class="headerlink" title="gas的确定"></a>gas的确定</h2><p>当我们在以太坊发送一笔交易的时候, 首先要确定这笔交易的手续费, 避免太高浪费或者太低被矿工抛弃以至于交易阻塞。可以通过<a href="https://ethgasstation.info" target="_blank" rel="noopener">https://ethgasstation.info</a> 或者 <a href="https://www.etherscan.io/txsPending" target="_blank" rel="noopener">https://www.etherscan.io/txsPending</a> 来查询确定。</p>
 <a id="more"></a>
-<h2 id="如何处理已经阻塞的交易"><a href="#如何处理已经阻塞的交易" class="headerlink" title="如何处理已经阻塞的交易?"></a>如何处理已经阻塞的交易?</h2><p>方式有几种, 下面介绍一个我用的比较多的(使用 <strong>Ethereal</strong>来处理)</p>
+<h2 id="如何处理已经阻塞的交易"><a href="#如何处理已经阻塞的交易" class="headerlink" title="如何处理已经阻塞的交易?"></a>如何处理已经阻塞的交易?</h2><p>方式有几种, 下面介绍一个我用的比较多的(使用 <strong>Ethereal</strong>来处理)。</p>
 <h2 id="Ethereal的安装"><a href="#Ethereal的安装" class="headerlink" title="Ethereal的安装"></a>Ethereal的安装</h2><ul>
-<li>首先需要安装go环境和git(没有安装的可以去网上查找相关教程, 此处略过)</li>
+<li>首先需要安装go环境和git(没有安装的可以去网上查找相关教程, 此处略过)。</li>
 <li>获取ethereal 使用命令 go get -u github.com/wealdtech/ethereal<blockquote>
-<p>安装完成后可以使用 ethereal account list 来检测 ethereal 是否可用, 此处会返回阻塞交易的账户列表</p>
+<p>安装完成后可以使用 ethereal account list 来检测 ethereal 是否可用, 此处会返回阻塞交易的账户列表。</p>
 </blockquote>
 </li>
 </ul>
