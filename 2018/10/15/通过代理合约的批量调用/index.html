@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="gas的确定当我们在以太坊发送一笔交易的时候, 首先要确定这笔交易的手续费, 避免太高浪费或者太低被矿工抛弃以至于交易阻塞。可以通过https://ethgasstation.info 或者 https://www.etherscan.io/txsPending 来查询确定。">
+<meta name="description" content="当我们在以太坊上想要发起一笔交易的时候,我们可以使用MetaMask, Remix, Myetherwallet 或者是 imtoken等.当我们要批量的交易的时候, 例如像3000+地址, 每个地址转不固定数量的token, 需要怎么做? 可以用上面的方法, 但是无疑会消耗大量的时间, 而且很有可能出现漏转, 错转的情况.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="取消或重置阻塞的以太坊交易的方法">
-<meta property="og:url" content="http://www.bjz2017.com/2018/05/30/取消或重置阻塞的以太坊交易/index.html">
+<meta property="og:title" content="通过代理合约的批量调用">
+<meta property="og:url" content="http://www.bjz2017.com/2018/10/15/通过代理合约的批量调用/index.html">
 <meta property="og:site_name" content="BXin&#39;s NOTES">
-<meta property="og:description" content="gas的确定当我们在以太坊发送一笔交易的时候, 首先要确定这笔交易的手续费, 避免太高浪费或者太低被矿工抛弃以至于交易阻塞。可以通过https://ethgasstation.info 或者 https://www.etherscan.io/txsPending 来查询确定。">
+<meta property="og:description" content="当我们在以太坊上想要发起一笔交易的时候,我们可以使用MetaMask, Remix, Myetherwallet 或者是 imtoken等.当我们要批量的交易的时候, 例如像3000+地址, 每个地址转不固定数量的token, 需要怎么做? 可以用上面的方法, 但是无疑会消耗大量的时间, 而且很有可能出现漏转, 错转的情况.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-30T11:17:49.747Z">
+<meta property="og:updated_time" content="2018-10-15T06:34:43.057Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="取消或重置阻塞的以太坊交易的方法">
-<meta name="twitter:description" content="gas的确定当我们在以太坊发送一笔交易的时候, 首先要确定这笔交易的手续费, 避免太高浪费或者太低被矿工抛弃以至于交易阻塞。可以通过https://ethgasstation.info 或者 https://www.etherscan.io/txsPending 来查询确定。">
+<meta name="twitter:title" content="通过代理合约的批量调用">
+<meta name="twitter:description" content="当我们在以太坊上想要发起一笔交易的时候,我们可以使用MetaMask, Remix, Myetherwallet 或者是 imtoken等.当我们要批量的交易的时候, 例如像3000+地址, 每个地址转不固定数量的token, 需要怎么做? 可以用上面的方法, 但是无疑会消耗大量的时间, 而且很有可能出现漏转, 错转的情况.">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://www.bjz2017.com/2018/05/30/取消或重置阻塞的以太坊交易/"/>
+  <link rel="canonical" href="http://www.bjz2017.com/2018/10/15/通过代理合约的批量调用/"/>
 
 
 
 
 
-  <title>取消或重置阻塞的以太坊交易的方法 | BXin's NOTES</title>
+  <title>通过代理合约的批量调用 | BXin's NOTES</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.bjz2017.com/2018/05/30/取消或重置阻塞的以太坊交易/">
+    <link itemprop="mainEntityOfPage" href="http://www.bjz2017.com/2018/10/15/通过代理合约的批量调用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="baolovelil">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">取消或重置阻塞的以太坊交易的方法</h1>
+          <h1 class="post-title" itemprop="name headline">通过代理合约的批量调用</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-30T17:04:49+08:00">
-                2018-05-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-15T11:54:44+08:00">
+                2018-10-15
               </time>
             
 
@@ -280,9 +280,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/30/取消或重置阻塞的以太坊交易/#comments" itemprop="discussionUrl">
+                <a href="/2018/10/15/通过代理合约的批量调用/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/30/取消或重置阻塞的以太坊交易/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/10/15/通过代理合约的批量调用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -315,29 +315,13 @@
       
 
       
-        <h2 id="gas的确定"><a href="#gas的确定" class="headerlink" title="gas的确定"></a>gas的确定</h2><p>当我们在以太坊发送一笔交易的时候, 首先要确定这笔交易的手续费, 避免太高浪费或者太低被矿工抛弃以至于交易阻塞。可以通过<a href="https://ethgasstation.info" target="_blank" rel="noopener">https://ethgasstation.info</a> 或者 <a href="https://www.etherscan.io/txsPending" target="_blank" rel="noopener">https://www.etherscan.io/txsPending</a> 来查询确定。</p>
+        <p>当我们在以太坊上想要发起一笔交易的时候,我们可以使用MetaMask, Remix, Myetherwallet 或者是 imtoken等.<br>当我们要批量的交易的时候, 例如像3000+地址, 每个地址转不固定数量的token, 需要怎么做? 可以用上面的方法, 但是无疑会消耗大量的时间, 而且很有可能出现漏转, 错转的情况.</p>
 <a id="more"></a>
-<h2 id="如何处理已经阻塞的交易"><a href="#如何处理已经阻塞的交易" class="headerlink" title="如何处理已经阻塞的交易?"></a>如何处理已经阻塞的交易?</h2><h3 id="方式一-使用-myetherwallet-参考-https-bihu-com-article-956"><a href="#方式一-使用-myetherwallet-参考-https-bihu-com-article-956" class="headerlink" title="方式一 : 使用 myetherwallet ,参考 https://bihu.com/article/956"></a>方式一 : 使用 myetherwallet ,参考 <a href="https://bihu.com/article/956" target="_blank" rel="noopener">https://bihu.com/article/956</a></h3><h3 id="方式二-使用-Ethereal"><a href="#方式二-使用-Ethereal" class="headerlink" title="方式二 : 使用 Ethereal"></a>方式二 : 使用 Ethereal</h3><h2 id="Ethereal的安装"><a href="#Ethereal的安装" class="headerlink" title="Ethereal的安装"></a>Ethereal的安装</h2><ul>
-<li>首先需要安装go环境和git(没有安装的可以去网上查找相关教程, 此处略过)。</li>
-<li>获取ethereal 使用命令 go get -u github.com/wealdtech/ethereal<blockquote>
-<p>安装完成后可以使用 ethereal account list 来检测 ethereal 是否可用, 此处会返回阻塞交易的账户列表。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="Ethereal的使用"><a href="#Ethereal的使用" class="headerlink" title="Ethereal的使用"></a>Ethereal的使用</h2><ul>
-<li><p>使用 ethereal transaction info 查看交易状态。例如 :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethereal transaction info --transaction=0x18d63e449ebfde9821852cd032a04f5cab154d8d3cad884201145d6ef49de2a2</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>提高gas价格,从新发送这笔交易。例如 : </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethereal transaction up --transaction=0x18d63e449ebfde9821852cd032a04f5cab154d8d3cad884201145d6ef49de2a2 --gasprice=10gwei --passphrase=secret</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>其中，gasprice是从新发送这笔交易给的手续费,我们提高到10gwei。passphrase是解锁发送阻塞交易的账户的命令。</p>
-<ul>
-<li>取消这笔交易。 例如 :<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethereal transaction cancel --transaction=0x18d63e449ebfde9821852cd032a04f5cab154d8d3cad884201145d6ef49de2a2 --gasprice=60gwei --passphrase=secret</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>使用Ethereal可以灵活的控制我们的交易, 避免在阻塞的时候交易长时间不被打包的情况。</p>
+<p>这时我们可以将要发送的数据写到数据库(或者是内存 or 一个.txt文件), 然后通过geth或者web3(go,java,js等等) 的循环调用来达到批量处理的目的, 通过此方法可以解决批量处理的问题.</p>
+<p>问题是消耗的手续费过高, 但是以太坊上的每笔交易必须要付一定量手续费才有矿工肯打包. 有没有办法尽量减少手续费的消耗?可以通过代理合约来批量调用达到节约手续费的目的.</p>
+<h3 id="一、部署代理合约"><a href="#一、部署代理合约" class="headerlink" title="一、部署代理合约"></a>一、部署代理合约</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">contract Airdrop is owned&#123;</span><br><span class="line">    </span><br><span class="line">   constructor()  public payable&#123;</span><br><span class="line">         </span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">  function deposit() payable public&#123;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  function doTransfers(address _tokenAddr, address[] _dests, uint256[] _values) onlyOwner public &#123;</span><br><span class="line">    require(_dests.length &gt;= 1 &amp;&amp; _dests.length == _values.length);</span><br><span class="line">    ContractConn conn = ContractConn(_tokenAddr);</span><br><span class="line">    uint256 i = 0;</span><br><span class="line">    while (i &lt; _dests.length) &#123;</span><br><span class="line">        conn.transfer(_dests[i], _values[i]);</span><br><span class="line">        i += 1;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  function doLocks(address _tokenAddr, address[] _dests, uint256[] _values) onlyOwner public&#123;</span><br><span class="line">    require(_dests.length &gt;= 1 &amp;&amp; _dests.length == _values.length);</span><br><span class="line">    ContractConn conn = ContractConn(_tokenAddr);</span><br><span class="line">    uint256 i = 0;</span><br><span class="line">    while (i &lt; _dests.length) &#123;</span><br><span class="line">        conn.lock(_dests[i], _values[i]);</span><br><span class="line">        i += 1;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  function doWork(address _tokenAddr, string _method, address[] _dests, uint256[] _values) onlyOwner public&#123;</span><br><span class="line">      require(_dests.length &gt;= 1 &amp;&amp; _dests.length == _values.length);</span><br><span class="line">      bytes4 methodID =  bytes4(keccak256(abi.encodePacked(_method)));</span><br><span class="line">      uint256 i = 0;</span><br><span class="line">      while(i &lt; _dests.length)&#123;</span><br><span class="line">          if(!_tokenAddr.call(methodID, _dests[i], _values[i]))&#123;</span><br><span class="line">              revert();</span><br><span class="line">          &#125;</span><br><span class="line">          i += 1;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  function extract(address _tokenAddr,address _to,uint256 _value) onlyOwner  public&#123;</span><br><span class="line">      ContractConn conn = ContractConn(_tokenAddr);</span><br><span class="line">      conn.transfer(_to,_value);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  function extractEth(uint256 _value) onlyOwner  public&#123;</span><br><span class="line">      msg.sender.transfer(_value);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二、将要转发的token总量转入刚刚部署的代理合约中"><a href="#二、将要转发的token总量转入刚刚部署的代理合约中" class="headerlink" title="二、将要转发的token总量转入刚刚部署的代理合约中"></a>二、将要转发的token总量转入刚刚部署的代理合约中</h3><p>调用流程:<br>发起地址 -&gt; 代理合约 -&gt;Erc20合约 (<strong>注意: 发起地址需要持有eth, 代理合约需要持有所有token总量</strong>)</p>
+<h3 id="三、调用代理合约相应的方法"><a href="#三、调用代理合约相应的方法" class="headerlink" title="三、调用代理合约相应的方法"></a>三、调用代理合约相应的方法</h3><p>调用时传入要发的token合约地址以及相应的地址和数量列表,注意地址和数量列表数量相等且一一对应.<br>此处注意gaslimit的设置, 100笔的gas消耗大约在 300000+.</p>
 
       
     </div>
@@ -362,8 +346,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/09/合约间的交互/" rel="next" title="合约间的交互">
-                <i class="fa fa-chevron-left"></i> 合约间的交互
+              <a href="/2018/07/06/Android环境下集成web3j/" rel="next" title="Android环境下集成web3j">
+                <i class="fa fa-chevron-left"></i> Android环境下集成web3j
               </a>
             
           </div>
@@ -371,10 +355,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/06/Android环境下集成web3j/" rel="prev" title="Android环境下集成web3j">
-                Android环境下集成web3j <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -498,7 +478,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#gas的确定"><span class="nav-number">1.</span> <span class="nav-text">gas的确定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何处理已经阻塞的交易"><span class="nav-number">2.</span> <span class="nav-text">如何处理已经阻塞的交易?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一-使用-myetherwallet-参考-https-bihu-com-article-956"><span class="nav-number">2.1.</span> <span class="nav-text">方式一 : 使用 myetherwallet ,参考 https://bihu.com/article/956</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式二-使用-Ethereal"><span class="nav-number">2.2.</span> <span class="nav-text">方式二 : 使用 Ethereal</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ethereal的安装"><span class="nav-number">3.</span> <span class="nav-text">Ethereal的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ethereal的使用"><span class="nav-number">4.</span> <span class="nav-text">Ethereal的使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、部署代理合约"><span class="nav-number">1.</span> <span class="nav-text">一、部署代理合约</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、将要转发的token总量转入刚刚部署的代理合约中"><span class="nav-number">2.</span> <span class="nav-text">二、将要转发的token总量转入刚刚部署的代理合约中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、调用代理合约相应的方法"><span class="nav-number">3.</span> <span class="nav-text">三、调用代理合约相应的方法</span></a></li></ol></div>
             
 
           </div>
@@ -682,9 +662,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.bjz2017.com/2018/05/30/取消或重置阻塞的以太坊交易/';
-          this.page.identifier = '2018/05/30/取消或重置阻塞的以太坊交易/';
-          this.page.title = '取消或重置阻塞的以太坊交易的方法';
+          this.page.url = 'http://www.bjz2017.com/2018/10/15/通过代理合约的批量调用/';
+          this.page.identifier = '2018/10/15/通过代理合约的批量调用/';
+          this.page.title = '通过代理合约的批量调用';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://bjz.disqus.com/embed.js';
