@@ -313,8 +313,7 @@
 
       
         
-          
-            <p>##介绍如何在linux系统上从零开始搭建一个EOS环境, 并发布一个HelloWorld合约</p>
+          <p>##介绍如何在linux系统上从零开始搭建一个EOS环境, 并发布一个HelloWorld合约</p>
 <blockquote>
 <p>EOS与以太坊还是有一些差别,先了解一下EOS的几个组件cleos、keosd、nodeos </p>
 </blockquote>
@@ -327,23 +326,13 @@
 </ul>
 </blockquote>
 </blockquote>
-<p>此外还需要了解一下EOSIO合同开发工具包，简称CDT，是与合同编制相关的工具集合。后续使用CDT来编译合同和生成ABI。</p>
-<p><strong>刚开始建议使用docker来搭建开发环境</strong></p>
-<ol>
-<li>docker pull eosio/eos-dev:v1.5.2 (下载包含已包含EOSIO环境的Ubuntu映像)</li>
-<li>docker network create eosdev (通过network命令创建一个共享网络eosdev用于nodeos与keosd连接)</li>
-<li><figure class="highlight plain"><figcaption><span>docker run \</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">  --name nodeos -d -p 8888:8888 \</span><br><span class="line">  --network eosdev \</span><br><span class="line">  -v /tmp/eosio/work:/work \</span><br><span class="line">  -v /tmp/eosio/data:/mnt/dev/data \</span><br><span class="line">  -v /tmp/eosio/config:/mnt/dev/config \</span><br><span class="line">  eosio/eos-dev \</span><br><span class="line">/bin/bash -c \</span><br><span class="line">  &quot;nodeos -e -p eosio \</span><br><span class="line">    --plugin eosio::producer_plugin \</span><br><span class="line">    --plugin eosio::history_plugin \</span><br><span class="line">    --plugin eosio::chain_api_plugin \</span><br><span class="line">    --plugin eosio::history_api_plugin \</span><br><span class="line">    --plugin eosio::http_plugin \</span><br><span class="line">    -d /mnt/dev/data \</span><br><span class="line">    --config-dir /mnt/dev/config \</span><br><span class="line">    --http-server-address=0.0.0.0:8888 \</span><br><span class="line">    --access-control-allow-origin=* \</span><br><span class="line">    --contracts-console \</span><br><span class="line">    --http-validate-host=false&quot;</span><br><span class="line">    --filter-on=&quot;*&quot;``` </span><br><span class="line">&gt; 这些设置可实现以下功能：</span><br><span class="line">&gt;1. 转发端口8888</span><br><span class="line">&gt;2. 连接到在上一步中创建的本地网络eosdev</span><br><span class="line">&gt;3. 将本地驱动器上的三个卷别名为docker容器。</span><br><span class="line">&gt;4. 在bash中运行Nodeos。加载所有基本插件，设置服务器地址，启用CORS。</span><br><span class="line">&gt;5. 在本地计算机上/tmp 挂载一些目录到docker容器中。</span><br><span class="line"></span><br><span class="line">4.运行Keosd </span><br><span class="line">```docker run -d --name keosd --network=eosdev \</span><br><span class="line">-i eosio/eos-dev /bin/bash -c &quot;keosd --http-server-address=0.0.0.0:9876&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>检查Nodeos是否正在生成块</p>
-<figure class="highlight docker"><figcaption><span>logs --tail 10 nodeos```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span>.检查钱包</span><br><span class="line">```docker exec -it keosd bash</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>运行以下命令<br><figure class="highlight plain"><figcaption><span>--wallet-url</span><a href="http://127.0.0.1:9876" target="_blank" rel="noopener">wallet list keys```</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">如果你看到了这条消息说明keosd正常运行</span><br><span class="line">Wallets:</span><br><span class="line">[]</span><br><span class="line">7. 输入exit退出回车退出 </span><br><span class="line">8. 打开 http://localhost:8888/v1/chain/get_info 检查nodeos是否正常</span><br><span class="line">9. 给cleos设置一个别名, 这样就不需要每次都进入容器 </span><br><span class="line">&gt;找到keosd的IP地址 ```docker network inspect eosdev</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>然后运行命令 <code>alias cleos=&#39;docker exec -it nodeos /opt/eosio/bin/cleos --url http://127.0.0.1:8888 --wallet-url http://[keosd_ip]:9876&#39;</code></p>
-</blockquote>
-<h3 id="截止到目前-我们有了cleos、keosd、nodeos-环境已经搭建完成-接下来我们来发布一个简单的合约"><a href="#截止到目前-我们有了cleos、keosd、nodeos-环境已经搭建完成-接下来我们来发布一个简单的合约" class="headerlink" title="截止到目前, 我们有了cleos、keosd、nodeos, 环境已经搭建完成, 接下来我们来发布一个简单的合约"></a>截止到目前, 我们有了cleos、keosd、nodeos, 环境已经搭建完成, 接下来我们来发布一个简单的合约</h3>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/05/EOS开发/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
